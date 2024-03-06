@@ -1,11 +1,12 @@
 import { Books } from "./Books";
 import { LibraryContextProvider } from "./LibraryContext";
+import { Flex, Heading, Text, Button } from '@chakra-ui/react';
 
 
 function Library() {
   return (
     <div className="App">
-      <h1>Library</h1>
+      <Heading size="xl">Library</Heading>
       <LibraryContextProvider>
         <Books />
       </LibraryContextProvider>

@@ -1,9 +1,10 @@
-import { Book } from "./Book";
-import { useLibrary } from "./LibraryContext";
+import { Book } from './Book';
+import { useLibrary } from './LibraryContext';
 
 export const Category = ({ title, category }) => {
-  const { books } = useLibrary();
-  const categoryBooks = books.filter((book) => book.category === category);
+  //it was like this: ({ title, category })
+  const { state } = useLibrary();
+  const categoryBooks = state.filter((book) => book.category === category);
   return (
     <>
       <h3>

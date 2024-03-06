@@ -1,7 +1,7 @@
 import { useLibrary } from "./LibraryContext";
 
 export const Book = ({ book }) => {
-  const { borrowBook, returnBook } = useLibrary();
+  const { borrowBook, returnBook,removeBook } = useLibrary();// Extracts borrowBook and returnBook functions from the context, enabling book borrowing/returning functionality
   return (
     <>
       <h4>📖 {book.title}</h4>
@@ -15,6 +15,8 @@ export const Book = ({ book }) => {
           ⏎ Return
         </button>
       )}
+
+      <button type="button" onClick={() => removeBook(book.id)}>Remove</button>
     </>
   );
 };
